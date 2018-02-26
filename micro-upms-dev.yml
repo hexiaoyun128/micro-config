@@ -1,3 +1,13 @@
+server:
+  port: 8801
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+  client:
+    service-url:
+      defaultZone: http://cloudy:cloudy@${EUREKA_HOST:localhost}:${EUREKA_PORT:8812}/eureka/
 spring:
   datasource:
     name: test
@@ -26,12 +36,6 @@ spring:
     password: guest
     addresses: localhost:5672
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://cloudy:cloudy@${EUREKA_HOST:localhost}:${EUREKA_PORT:8812}/eureka/
-server:
-  port: 8806
 mybatis:
   type-aliases-package: com.hechihan.micro.apps.sale.mapper
   mapper-locations: classpath:mapper/*.xml
@@ -47,16 +51,6 @@ mybatis:
 logging:
   level:
     com.hechihan.micro.user.mapper: debug
-jwt:
-  token-header: access-token
-  pub-key:
-    path: F:\javaWork\cloudy\micro\micro-sale\src\main\resources\jwt\pub.key
-client:
-  id: micro-user
-  secret: 123456
-  token-header: client-token
-  pub-key:
-    path: F:\javaWork\cloudy\micro-serveice\micro-sale\src\main\resources\client\pub.key
 flyway:
   enabled: true
   url: ${spring.datasource.url}
