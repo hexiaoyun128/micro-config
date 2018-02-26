@@ -1,3 +1,5 @@
+server:
+  port: 8806
 spring:
   datasource:
     name: test
@@ -26,12 +28,6 @@ spring:
     password: guest
     addresses: localhost:5672
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://cloudy:cloudy@${EUREKA_HOST:localhost}:${EUREKA_PORT:8812}/eureka/
-server:
-  port: 8806
 mybatis:
   type-aliases-package: com.hechihan.micro.apps.sale.mapper
   mapper-locations: classpath:mapper/*.xml
@@ -42,7 +38,6 @@ mybatis:
     lazy-loading-enabled: true
     # 允许 JDBC 支持自动生成主键
     use-generated-keys: true
-
 
 logging:
   level:
