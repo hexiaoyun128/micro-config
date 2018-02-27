@@ -10,7 +10,3 @@ zuul:
       serviceId: micro-auth
   retryable: true
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://cloudy:cloudy@${EUREKA_HOST:localhost}:${EUREKA_PORT:8812}/eureka/
