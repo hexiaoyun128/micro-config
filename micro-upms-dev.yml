@@ -32,7 +32,7 @@ spring:
     addresses: localhost:5672
 
 mybatis:
-  type-aliases-package: com.hechihan.micro.apps.sale.mapper
+  type-aliases-package: com.hechihan.micro.apps.upms.mapper
   mapper-locations: classpath:mapper/*.xml
   configuration:
     #全局缓存
@@ -58,4 +58,4 @@ flyway:
   target: 1.0
   baseline-on-migrate: true
   baseline-version: 1.0
-baseline-description: base
+  baseline-description: base
